@@ -1,12 +1,15 @@
 package com.readyMadeProjects.projectTrackerTool.repositories;
 
+
 import com.readyMadeProjects.projectTrackerTool.domain.Project;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProjectRepository extends CrudRepository<Project,Long> {
+public interface ProjectRepository extends CrudRepository<Project, Long> {
 
-    @Override
-    Iterable<Project> findAllById(Iterable<Long> iterable);
+    Project findByProjectIdentifier(String projectid);
+    Iterable<Project> findAll();
+
+
 }
